@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+       
+          <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+            <a href="index.html">
+            <strong>Do you want to go back to the previous page</strong>
+            </a>
+                <br><br>
+             <header>
+                <h1>Login and Registration Form </h1>
+                <br>
+				
+            </header>
+            <br>
+            <br>
+            <section>				
+                <div id="container_demo" >
+                     <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="/b" autocomplete="on" method="get"> 
+                                <h1>Log in</h1> 
+                                <p> 
+                                    <label for="username" class="uname" > Your email or username </label>
+                                    <input id="username" name="u1" required="required" type="text" placeholder="email id"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" > Your password </label>
+                                    <input id="password" name="p1" required="required" type="password" placeholder="your account pswrd" /> 
+                                </p>
+                              
+                                <p class="login button"> 
+                                    <input type="submit" value="Login" /> 
+								</p>
+                                <p class="change_link">
+									Not a member yet ?
+									<a href="#toregister" class="to_register">Join us</a>
+								</p>
+                            </form>
+                        </div>
+
+                        <div id="register" class="animate form">
+                            <form  action="/b" autocomplete="on" method="post"> 
+                                <h1> Sign up </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" >Your username</label>
+                                    <input id="usernamesignup" name="r1" required="required" type="text" placeholder="user name" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail" > Your email</label>
+                                    <input id="emailsignup" name="r2" required="required" type="email" placeholder="email id "/> 
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" >Your password </label>
+                                    <input id="passwordsignup" name="r3" required="required" type="password" placeholder="Enter your pswrd"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" >Please confirm your password </label>
+                                    <input id="passwordsignup_confirm" name="r4" required="required" type="password" placeholder="enter the pswrd as above"/>
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="Sign up"/> 
+								</p>
+                                <p class="change_link">  
+									Already a member ?
+									<a href="#tologin" class="to_register"> Go and log in </a>
+								</p>
+                            </form>
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>
