@@ -1,0 +1,49 @@
+	JAVA DATA OBJECT
+is an interface for accessing databases in java and providing the mapping between java classes and database tables,
+
+there is an open source plugin available for using jdo with datastore,
+
+
+=================================================================
+
+	An app interact with jdo using an instance of persistenceManager class
+get the instance by instantiating and calling a method on an instance of the 
+PersistenceManagerFactory class....  jdo configuration to create persistencemanager instances
+
+
+persistencemanagerfactoru instance takes time to initialize an app 
+so we reuse a single instance. 
+to manage the persistenceManagerFactory instance is to create a singleton wrapper class with a static instance
+
+
+eg----------------------------------
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManagerFactory;
+
+public final class PMF {
+    private static final PersistenceManagerFactory pmfInstance =
+        JDOHelper.getPersistenceManagerFactory("transactions-optional");
+						//refers to the name of the configuration set in jdoconfig.xml file
+
+    private PMF() {}
+
+    public static PersistenceManagerFactory get() {
+        return pmfInstance;
+    }
+}
+if you app uses multiple configuration sets , you'll have to extend this code to call
+JDOHelper.getPersistenceManagerFactory() as desired
+===============================================================
+
+the app uses the factory instance to create one persistencemanager instancee for each request that accessess the datastore
+
+PersistenceManager pl=PMF.get().getPersistenceManager();
+
+
+we use persistence manager to store ,update , and delete data objects and to perform datastore queries.
+when persistence manager instance you must call its close() method
+	pl.close();
+
+
+============================================================================
+

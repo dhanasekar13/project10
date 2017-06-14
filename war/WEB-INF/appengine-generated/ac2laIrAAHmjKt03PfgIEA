@@ -1,0 +1,7 @@
+The XMLHttpRequest object is the key to AJAX.
+xmlhttprequest is an api that can be used by javascript ,any other scripting language to transfer and manipulate 
+XML data to and from a webserver using http , establishing an independent connection channel between webpage client and server side
+the data returned from XMLHTTPREquest calls will often be provided by back-end databases
+
+xmlhttprequest object can used to fetch data in other format 
+eg---json or even plain text

@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 public class Bootstrap1Servlet extends HttpServlet {
 	static Regpojo jd;
 	Regdatastore rd;
+	public static String emailfull;
 	PersistenceManager pm = singldata.get().getPersistenceManager();
-static String email;
+public static String email;
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
@@ -43,9 +44,9 @@ static String email;
 		System.out.println("this is the registration block");
 		PrintWriter out = resp.getWriter();
 		String uname = req.getParameter("r1");
-		String email = req.getParameter("r2");
+		 emailfull = req.getParameter("r2");
 		String pwrd = req.getParameter("r3");
-		jd = new Regpojo(uname, email, pwrd);
+		jd = new Regpojo(uname, emailfull, pwrd);
 		// the above one is java data object
 		String a1 = jd.getName();
 		String a2 = jd.getEmail();
@@ -53,8 +54,14 @@ static String email;
 		rd = new Regdatastore(a1, a2, a3);
 		
 			System.out.println("before the persistent"+rd);
+		try{
 			pm.makePersistent(rd);
-			System.out.println("after the persistent");
+		}
+		catch(Exception e)
+		{
+			}
+		System.out.println("after the persistent");
+		
 			resp.sendRedirect("check.html");
 		
 	}

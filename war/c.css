@@ -1,0 +1,55 @@
+body{
+	background:lightblue;
+}
+.left{
+	
+	float:left;
+	width:200;
+	height:613;
+}
+.left:after{
+	clear:both;
+	content:"";
+}
+.right{
+
+	float:right;
+	width:1068;
+	height:613;
+}
+.left1
+{
+	width:200;
+	height:300;
+}
+.left2
+{
+	width:200;
+	height:313;
+}
+img
+{
+	width:180;
+	height:200;
+}
+nav{
+	position:fixed;
+	background:blue;
+	width:100%;
+	height:50px;
+	z-index:1;
+	
+}
+nav li{
+	
+	float:right;
+	padding:10px;
+}
+
+.img23
+{
+	width:345;
+	height:345;
+	margin-left:300;
+}
+

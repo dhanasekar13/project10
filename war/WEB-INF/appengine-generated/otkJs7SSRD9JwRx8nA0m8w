@@ -1,0 +1,65 @@
+	BOOTSTRAP GRIDS
+this grid system allows  up to 12 collumns across the page
+If you do not want to use all 12 columns individually, 
+you can group the columns together to create wider columns:
+
+
+span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1	span 1
+ 	span 4					 span 4			 span 4
+	span 4					         	span 8
+			span 6						span 6
+						span 12
+
+
+bootstrap grid system has four classes
+*xs--for phones
+*sm--for tablets
+*md--for desktops
+*lg--for larger desktops
+this classes can be combined to create more dynamic and flexible layouts
+
+
+----------------------------------------------------------------
+eg---------
+<div class="row">
+  <div class="col-*-*"></div>
+</div>
+<div class="row">
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+</div>
+<div class="row">
+  ...
+</div>
+
+First; create a row (<div class="row">).
+ Then, add the desired number of columns (tags with appropriate .col-*-* classes). Note that numbers in .col-*-* should always add up to 12 for each row.
+
+Below we have collected some examples of basic Bootstrap grid layouts.
+
+
+================================================================================
+3 equal columns---EQUAL COLUMNS
+col-sm-4 col-sm-4 col-sm-4
+---to have a columns of equal length 
+<div class="row">//Mentioning that the specified to a particular row
+//this row class name mentaines the starts of the tab
+<div class="cols-sm-4>name</div>
+<div class="cols-sm-4>Address</div>
+<div class="cols-sm-4>phone</div>
+</div>
+where cols-sm-this no can be ranged from 1 to 4 in specified single row
+if the no is increased then the cols will sloops down
+
+-----------------------------------------------------------------------------------
+for unequal columns
+similar to the above the difference provide the range of value not the sammme
+provide the different value
+
+eg------
+<div class="row">
+<div class="cols-md-3>name</div>
+<div class="cols-md-7>address</div>
+</div>
+

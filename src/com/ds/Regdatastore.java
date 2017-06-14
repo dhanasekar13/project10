@@ -15,7 +15,7 @@ public class Regdatastore {
 	private String password;
 
 	public Regdatastore(String firstname, String email, String password) {
-		super();
+	
 		this.firstname = firstname;
 		this.email = email;
 		this.password = password;

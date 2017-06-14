@@ -1,22 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://java.sun.com/xml/ns/javaee"
-xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
 	<servlet>
 		<servlet-name>B</servlet-name>
 		<servlet-class>com.ds.Bootstrap1Servlet</servlet-class>
-		
+
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>B</servlet-name>
 		<url-pattern>/b</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>s1</servlet-name>
+		<servlet-class>blogger.serve</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>s1</servlet-name>
+		<url-pattern>/s1</url-pattern>
+	</servlet-mapping>
 	<servlet>
+		<servlet-name>g11</servlet-name>
+		<servlet-class>blogger.getblog</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>g11</servlet-name>
+		<url-pattern>/g1</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>c11</servlet-name>
+		<servlet-class>blogger.createblog</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c11</servlet-name>
+		<url-pattern>/c1</url-pattern>
+	</servlet-mapping>
+		<servlet>
 		<servlet-name>lo</servlet-name>
 		<servlet-class>com.ds.logout</servlet-class>
-		
+
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>lo</servlet-name>
@@ -25,22 +52,38 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
 		<servlet-name>se</servlet-name>
 		<servlet-class>com.ds.session</servlet-class>
-		
+
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>se</servlet-name>
 		<url-pattern>/s</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>profile1</servlet-name>
+		<servlet-class>com.ds.profile</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>profile1</servlet-name>
+		<url-pattern>/profile1</url-pattern>
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>B11</servlet-name>
-		<servlet-class>com.ds.blog</servlet-class>
-		
+		<servlet-class>blogger.blog</servlet-class>
+
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>B11</servlet-name>
 		<url-pattern>/b11</url-pattern>
 	</servlet-mapping>
-	
+	<jsp-config>
+  <jsp-property-group>
+    <url-pattern>*.jsp</url-pattern>
+    <trim-directive-whitespaces>true</trim-directive-whitespaces>
+  </jsp-property-group>
+</jsp-config>
+
 	<welcome-file-list>
 		<welcome-file>s</welcome-file>
 	</welcome-file-list>
