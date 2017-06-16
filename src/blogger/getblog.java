@@ -18,6 +18,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import com.ds.Bootstrap1Servlet;
 import com.ds.singldata;
+import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 import com.google.appengine.api.datastore.Query.Filter;
@@ -33,8 +34,6 @@ Collection<JSONObject> c1=new ArrayList<JSONObject>();
 HashSet<String> hs=new HashSet<String>();	
 	ObjectMapper map1=new ObjectMapper();
 	static PersistenceManager pm = singldata.get().getPersistenceManager();
-
-	
 	/**
 	 * 
 	 */
@@ -45,15 +44,13 @@ HashSet<String> hs=new HashSet<String>();
 		res.setContentType("application/json");
 		PrintWriter out = res.getWriter();
 		HttpSession s1 = req.getSession(false);
-		
+		 hs.clear();
 String Email=Bootstrap1Servlet.email;
 s1.setAttribute("email", Email);
 System.out.println(Email);
 String ui;
 Filter pf=new FilterPredicate("email",FilterOperator.EQUAL,Email);
 javax.jdo.Query q = pm.newQuery(blogcreate.class, "(email =='"+Email+"')");
-
-
 try {
   List<blogcreate> results = (List<blogcreate>) q.execute();
 System.out.println(results);
@@ -66,8 +63,23 @@ System.out.println(results);
   } else {
     // Handle "no results" case
   }
+  javax.jdo.Query q1=pm.newQuery(picupload.class, "(email =='"+Email+"')");
+  List<picupload> pic=(List<picupload>)q1.execute();
+  if(!pic.isEmpty())
+  {
+	  for(picupload poi:pic)
+	  {	
+		  BlobKey gh=poi.image1;
+		  System.out.println(poi+"this should be done only one");
+		ui=map1.writeValueAsString(gh);
+		hs.add(ui);
+	  }
+  }
+	  
  out.println(hs);
+
 } finally {
+		
   q.closeAll();
 }
 }

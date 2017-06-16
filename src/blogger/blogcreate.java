@@ -58,7 +58,7 @@
 		this.email = email;
 	}
 	public blogcreate(String blobtitle, String blobinfo, String blobcontent, BlobKey image,String email) {
-		super();
+	
 		this.blobtitle = blobtitle;
 		this.blobinfo = blobinfo;
 		this.blobcontent = blobcontent;

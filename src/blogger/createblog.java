@@ -47,7 +47,6 @@ public class createblog extends HttpServlet{
 			res.sendRedirect("/index.jsp");
 		} else {
 	bc1=new blogcreate(blogtitile,bloginfo,blogcontent,b2,email);
-
 	 try
      {
      pm.makePersistent(bc1);
